@@ -19,7 +19,7 @@ def jugar():
             if(entrada==letra):
                 letras_acertadas[indice] = letra
                 #print('Se encontró la letra {} en la posición {}'.format(letra, indice))
-                
+                 
             indice = indice + 1
         print(letras_acertadas)
         print('jugando... ')
