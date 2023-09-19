@@ -1,10 +1,21 @@
+import random
 def jugar():
     print('========================================')
     print('Bienvenido al Juego de la horca')
     print('========================================')
 
-    palabra_secreta = 'mandarina'
-    letras_acertadas =['_','_','_','_','_','_','_','_','_']
+    archivo= open('palabras.txt', 'r')
+    palabras = [] 
+    for linea in archivo:
+        linea= linea.strip()
+        palabras.append(linea)
+        
+    archivo.close()
+    numero = random.randrange(0, len(palabras))
+    
+    
+    palabra_secreta = palabras[numero].lower()
+    letras_acertadas =['_' for elemento in palabra_secreta]
     
     ahorcado = False
     acerto = False
@@ -31,11 +42,10 @@ def jugar():
         acerto = "_" not in letras_acertadas
         print(letras_acertadas)
        
-       
     if(acerto):
-        print('Felicidades, ganaste')
+        print('¡¡¡Felicidades, ganaste!!!')
     else:
-        print('Lo siento, perdiste')
+        print('Lo siento, perdiste...')
        
     print('FIN DEL JUEGO')
     
