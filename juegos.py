@@ -17,5 +17,5 @@ def escoger_juego():
         print("Jugando adivinanza")
         adivinanza.jugar()
        
-if(_name_ == "_main_"):
+if(__name__ == "__main__"):
     escoger_juego()
